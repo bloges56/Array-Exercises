@@ -43,6 +43,13 @@ export const getStudentByLastName = lastName => {
 // It should NOT be case sensitive
 // Ex: getStudentByName("Summer SMITH")
 
+
+export const getStudentByName = fullName => {
+    return students.find(student => {
+        return (student.firstName + " " + student.lastName).toLowerCase() === fullName.toLowerCase()
+    })
+}
+
 // Export a function called getInstructorOfStudent
 // It should accept one integeter parameter named `studentId`
 // It should return the instructor object of the student whose id matches `studentId`
