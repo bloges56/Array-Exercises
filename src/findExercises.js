@@ -33,7 +33,7 @@ export const getInstructorById = id => {
 
 export const getStudentByLastName = lastName => {
     return students.find(student => {
-        return student.lastName === lastName
+        return student.lastName.toLowerCase() === lastName.toLowerCase()
     })
 }
 
@@ -54,6 +54,14 @@ export const getStudentByName = fullName => {
 // It should accept one integeter parameter named `studentId`
 // It should return the instructor object of the student whose id matches `studentId`
 // Ex: getInstructorOfStudent(4)      // returns Brenda Long
+
+export const getInstructorOfStudent = studentId => {
+    const student = getStudentById(studentId)
+
+    return instructors.find(instructor => {
+        return student.instructorId === instructor.id
+    })
+}
 
 // Export a function called getStudentWithMostLangs
 // It should not accept any parameters
