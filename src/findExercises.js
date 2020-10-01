@@ -31,6 +31,12 @@ export const getInstructorById = id => {
 // It should NOT be case sensitive
 // Ex: getStudentByName("sMiTh")
 
+export const getStudentByLastName = lastName => {
+    return students.find(student => {
+        return student.lastName === lastName
+    })
+}
+
 // Export a function called getStudentByName
 // It should accept one string parameter named `fullName`
 // It should return the student object whose first and last name match `fullName`
